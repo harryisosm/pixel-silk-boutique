@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ShoppingBag, MessageCircle } from "lucide-react";
 import { useCart } from "@/lib/cart";
+import logoAsset from "@/assets/sakhisaaj-logo.png.asset.json";
 
 export function Header() {
   const { count } = useCart();
