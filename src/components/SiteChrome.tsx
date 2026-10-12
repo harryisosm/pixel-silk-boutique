@@ -18,7 +18,9 @@ export function Header() {
             <Link to="/contact" activeProps={{ className: "text-primary" }}>Contact</Link>
           </nav>
           <Link to="/shop" className="text-xs uppercase tracking-[0.2em] md:hidden">Shop</Link>
-          <Link to="/" className="font-display text-3xl tracking-[0.15em] text-primary">SAKHISAAJ</Link>
+          <Link to="/" className="inline-flex items-center justify-center" aria-label="Sakhisaaj home">
+            <img src={logoAsset.url} alt="Sakhisaaj — सुंदरतेचा प्रत्येक रंग, तुमच्यासाठी" className="h-12 w-auto md:h-14" />
+          </Link>
           <div className="flex justify-end">
             <Link to="/cart" aria-label="Cart" className="relative">
               <ShoppingBag className="h-5 w-5" />
