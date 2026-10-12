@@ -36,6 +36,5 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
 export const useCart = () => {
   const c = useContext(CartContext);
-  if (!c) throw new Error("CartProvider missing");
-  return c;
+  return c ?? fallback;
 };
