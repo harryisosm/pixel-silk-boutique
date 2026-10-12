@@ -9,7 +9,10 @@ interface Ctx {
   count: number;
 }
 
-const CartContext = createContext<Ctx | null>(null);
+// Keep one context instance across hot reloads so Provider and consumers always match.
+const g = globalThis as unknown as { __sakhiCart?: React.Context<Ctx | null> };
+const CartContext = (g.__sakhiCart ??= createContext<Ctx | null>(null));
+const fallback: Ctx = { items: [], add: () => {}, setQty: () => {}, count: 0 };
 
 export function CartProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([]);
