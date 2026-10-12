@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
+import { createContext, useContext, useEffect, useState, type Context, type ReactNode } from "react";
 
 export interface CartItem { slug: string; size?: string | undefined; qty: number }
 
@@ -10,7 +10,7 @@ interface Ctx {
 }
 
 // Keep one context instance across hot reloads so Provider and consumers always match.
-const g = globalThis as unknown as { __sakhiCart?: React.Context<Ctx | null> };
+const g = globalThis as unknown as { __sakhiCart?: Context<Ctx | null> };
 const CartContext = (g.__sakhiCart ??= createContext<Ctx | null>(null));
 const fallback: Ctx = { items: [], add: () => {}, setQty: () => {}, count: 0 };
 
