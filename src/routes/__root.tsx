@@ -13,6 +13,7 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { CartProvider } from "../lib/cart";
+import { Toaster } from "sonner";
 import { Header, Footer, WhatsAppButton } from "../components/SiteChrome";
 
 function NotFoundComponent() {
@@ -127,6 +128,7 @@ function RootComponent() {
         <main><Outlet /></main>
         <Footer />
         <WhatsAppButton />
+        <Toaster position="top-center" />
       </CartProvider>
     </QueryClientProvider>
   );
