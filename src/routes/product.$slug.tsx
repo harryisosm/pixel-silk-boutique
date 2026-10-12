@@ -34,7 +34,7 @@ function ProductPage() {
   const isSaree = p.category === "Sarees";
 
   const addToCart = () => {
-    if (p.sizes && !size) return toast.error("Please choose a size");
+    if (p.sizes && !size && !stitch) { toast.error("Please choose a size"); return; }
     add(p.slug, stitch ? "Custom stitching" : size);
     toast.success("Added to your bag");
   };

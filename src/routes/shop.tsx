@@ -7,7 +7,7 @@ const categories = ["All", "Sarees", "Ready-made Blouses", "Unstitched Blouses"]
 
 export const Route = createFileRoute("/shop")({
   validateSearch: (s: Record<string, unknown>): { category?: string | undefined } => ({
-    category: typeof s.category === "string" ? s.category : undefined,
+    category: typeof s["category"] === "string" ? s["category"] : undefined,
   }),
   head: () => ({
     meta: [
