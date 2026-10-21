@@ -38,7 +38,9 @@ export function Footer() {
     <footer className="mt-24 bg-primary text-primary-foreground">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 md:grid-cols-3">
         <div>
-          <p className="font-display text-3xl tracking-[0.15em]">SAKHISAAJ</p>
+          <Link to="/" className="inline-flex items-center" aria-label="Sakhisaaj home">
+            <img src={logoAsset.url} alt="Sakhisaaj — सुंदरतेचा प्रत्येक रंग, तुमच्यासाठी" className="h-16 w-auto md:h-20" />
+          </Link>
           <p className="mt-3 max-w-xs text-sm opacity-80">Sarees and blouses crafted with grace, for every celebration of you.</p>
         </div>
         <div className="flex flex-col gap-2 text-sm opacity-90">
